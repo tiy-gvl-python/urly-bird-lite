@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>BookMarks</title>
+</head>
+<body>
+
+<h1>Mark of Book</h1>
+
+<h2>User: {{ user.username }}</h2>
+<a href="/">Home</a>
+<a href="{% url 'marked' %}">MARK</a>
+<a href="/users">Users</a>
+
+{% if user.id %}
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'regis' %}">Sign up</a>
+{%  endif %}
+
+
+{% block title %}
+    <h3>Welcome to the Mark of Book!</h3>
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+
+</body>
+</html>

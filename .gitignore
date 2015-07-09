@@ -69,3 +69,6 @@ docs/_build/
 target/
 
 .direnv/
+.idea/
+requirements.txt
+requirements.txt/
