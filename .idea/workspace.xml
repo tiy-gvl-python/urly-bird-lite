@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76150f7a-695b-42db-81f9-a33ad15da7f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/templates/allbookmarks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/templates/redirec.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/templates/userbookmark.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/admin.py" afterPath="$PROJECT_DIR$/urlshortner/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/base.html" afterPath="$PROJECT_DIR$/urlshortner/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/registration/create_user.html" afterPath="$PROJECT_DIR$/urlshortner/templates/registration/create_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/models.py" afterPath="$PROJECT_DIR$/urlshortner/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/profile.html" afterPath="$PROJECT_DIR$/urlshortner/templates/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlybirdlite/urls.py" afterPath="$PROJECT_DIR$/urlybirdlite/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/views.py" afterPath="$PROJECT_DIR$/urlshortner/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="76150f7a-695b-42db-81f9-a33ad15da7f2" name="Default" comment="" />
     <ignored path="urlybirdlite.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -506,7 +493,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
