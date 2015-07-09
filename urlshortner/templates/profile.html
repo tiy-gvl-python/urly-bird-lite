@@ -11,6 +11,6 @@
     </ul></div>
 
 {% for bookmark in bookmarks %}
-    {{ bookmark }}<br/>
+    <a href="/7{{ bookmark.shorturl }}">{{ bookmark }}<br/>
 {% endfor %}
 {% endblock %}

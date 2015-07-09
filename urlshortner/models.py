@@ -25,3 +25,10 @@ class bookmark(models.Model):
 
     class Meta:
         ordering = ['-created']
+
+class click(models.Model):
+    bookmark = models.ForeignKey(bookmark)
+    used = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "{}".format(self.used)

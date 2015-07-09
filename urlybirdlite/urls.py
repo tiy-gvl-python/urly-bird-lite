@@ -14,16 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+
+from django.views.generic import RedirectView
 from django.contrib import admin
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
-from urlshortner.views import home, CreateBookMark, BookmarkUpdate, BookmarkDelete, profile, wtd, wtupdate
+from urlshortner.models import bookmark
+from urlshortner.views import home, CreateBookMark, BookmarkUpdate, BookmarkDelete, profile, wtd, wtupdate, redirec, \
+    ouser, allbookmarks
 
 urlpatterns = [
     url('^register/', CreateView.as_view(
             template_name='registration/create_user.html',
             form_class=UserCreationForm,
-            success_url='/'), name="regis"),
+            success_url='/profile/'), name="regis"),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', 'django.contrib.auth.views.login',name="login"),
@@ -45,6 +49,13 @@ urlpatterns = [
     url('^update(?P<pk>\w+)', BookmarkUpdate.as_view(
         template_name='bookmark_update.html',
         success_url='/profile/'), name="updatebookmark"),
-    url(r'^', home, name="home"),
+
+    url(r'^7(?P<shorturl>\w+)/$', redirec),
+    url(r'^user(?P<id>\d+)/$', ouser),
+    url(r'^all/$', allbookmarks, name="all"),
+
+
+    #(r'^7(?P<shorturl>\w+)/$', RedirectView.as_view()),
+
 
     ]

@@ -1,13 +1,35 @@
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse_lazy
-from django.shortcuts import render, render_to_response
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, render_to_response, get_object_or_404
 import random
 # Create your views here.
-from django.views.generic import CreateView, DeleteView, UpdateView
+from django.views.generic import CreateView, DeleteView, UpdateView, RedirectView
 from hashids import Hashids
-from urlshortner.models import bookmark
+from urlshortner.models import bookmark, click
+from django.shortcuts import redirect
 
 
-def
+
+def redirec(requests, shorturl):
+    print(shorturl)
+    url = bookmark.objects.get(shorturl=shorturl)
+    time = click.objects.create(bookmark=url)
+    time.save()
+    url = url.starterurl
+    print(url)
+    context = {"ur":url}
+    return render_to_response("redirec.html", context)
+
+def ouser(requests, id):
+    profile_book = bookmark.objects.filter(user=User.objects.get(id=id))
+    context = {'userbookmark': profile_book}
+    return render_to_response("userbookmark.html", context)
+
+def allbookmarks(requests):
+    profile_book = bookmark.objects.all()
+    context = {'userbookmark': profile_book}
+    return render_to_response("allbookmarks.html", context)
 
 def home(requests):
     context = {}
