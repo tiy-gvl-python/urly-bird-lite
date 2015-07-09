@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
-from urlshortner.views import home
+from urlshortner.views import home, CreateBookMark, BookmarkUpdate, BookmarkDelete, profile
 
 urlpatterns = [
     url('^register/', CreateView.as_view(
@@ -25,6 +25,24 @@ urlpatterns = [
             form_class=UserCreationForm,
             success_url='/'), name="regis"),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^login/$', 'django.contrib.auth.views.login',name="my_login"),
+    url(r'^login/$', 'django.contrib.auth.views.login',name="login"),
+    url(r'^logout', 'django.contrib.auth.views.logout', name="logout"),
+    url('^bookmark/', CreateBookMark.as_view(
+        template_name='createbookmark.html',
+        success_url='/profile/'), name="createbookmark"),
+    url(r'^wtd/', wtd, name="wtd"),
+    url(r'^uwtupdate/', wtupdate, name="wtupdate"),
+
+    url(r'^profile/', profile, name="home"),
+
+    url('^delrate(?P<pk>\w+)', BookmarkDelete.as_view(
+        template_name='deletebookmark.html',
+        success_url='/profile/'), name="delbookmark"),
+
+    url('^update(?P<pk>\w+)', BookmarkUpdate.as_view(
+        template_name='bookmark_update.html',
+        success_url='/profile/'), name="updatebookmark"),
+
     url(r'^', home, name="home"),
-]
+
+    ]

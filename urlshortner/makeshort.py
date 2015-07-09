@@ -1,0 +1,2 @@
+def getshort(url):
+    url =
