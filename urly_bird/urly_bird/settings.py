@@ -51,6 +51,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+SHORTEN_MODELS = {
+    "B" : 'bookmarks.Click'
+}
+
 ROOT_URLCONF = 'urly_bird.urls'
 
 TEMPLATES = [

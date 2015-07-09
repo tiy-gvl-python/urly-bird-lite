@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
-from bookmarks.views import bookmark_list, user_registration
+from bookmarks.views import bookmark_list, user_registration, get_index, redirectOriginal
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^logout/', logout, {'next_page':'/'}, name="logout"),
     url(r'^$', bookmark_list, name="bookmark_list"),
     url(r'^registration/', user_registration, name="user_registration"),
+    url(r'^get_index/', get_index, name='get_index'),
+    url(r'^redirectOriginal/(?P<short_id>\d+)/$', redirectOriginal, name="redirectOriginal")
     #url(r'',include('bookmarks.urls', namespace='bookmarks')),
 
 ]
