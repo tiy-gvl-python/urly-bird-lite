@@ -24,16 +24,19 @@ urlpatterns = [
             template_name='registration/create_user.html',
             form_class=UserCreationForm,
             success_url='/'), name="regis"),
+
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', 'django.contrib.auth.views.login',name="login"),
     url(r'^logout', 'django.contrib.auth.views.logout', name="logout"),
+
     url('^bookmark/', CreateBookMark.as_view(
         template_name='createbookmark.html',
         success_url='/profile/'), name="createbookmark"),
+
     url(r'^wtd/', wtd, name="wtd"),
     url(r'^uwtupdate/', wtupdate, name="wtupdate"),
 
-    url(r'^profile/', profile, name="home"),
+    url(r'^profile/', profile, name="profile"),
 
     url('^delrate(?P<pk>\w+)', BookmarkDelete.as_view(
         template_name='deletebookmark.html',
@@ -42,7 +45,6 @@ urlpatterns = [
     url('^update(?P<pk>\w+)', BookmarkUpdate.as_view(
         template_name='bookmark_update.html',
         success_url='/profile/'), name="updatebookmark"),
-
     url(r'^', home, name="home"),
 
     ]

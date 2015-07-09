@@ -7,6 +7,8 @@ from hashids import Hashids
 from urlshortner.models import bookmark
 
 
+def
+
 def home(requests):
     context = {}
     return render_to_response("home.html", context)
