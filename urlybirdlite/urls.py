@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
-from urlshortner.views import home, CreateBookMark, BookmarkUpdate, BookmarkDelete, profile
+from urlshortner.views import home, CreateBookMark, BookmarkUpdate, BookmarkDelete, profile, wtd, wtupdate
 
 urlpatterns = [
     url('^register/', CreateView.as_view(

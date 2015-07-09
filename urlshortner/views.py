@@ -8,13 +8,26 @@ from urlshortner.models import bookmark
 
 
 def home(requests):
-    context={}
+    context = {}
     return render_to_response("home.html", context)
 
+
 def profile(requests):
-    all_book = bookmark.objects.all()
-    context={'bookmark': all_book}
+    profile_book = bookmark.objects.filter(user=requests.user)
+    context = {'bookmarks': profile_book}
     return render_to_response("profile.html", context)
+
+
+def wtd(requests):
+    delete_book = bookmark.objects.filter(user=requests.user)
+    context = {'bookmarks': delete_book}
+    return render_to_response("wtd.html", context)
+
+
+def wtupdate(requests):
+    update_book = bookmark.objects.filter(user=requests.user)
+    context = {'bookmarks': update_book}
+    return render_to_response("wtupdate.html", context)
 
 
 class CreateBookMark(CreateView):
@@ -36,7 +49,7 @@ class CreateBookMark(CreateView):
         print("User", self.request.user)
         form.instance.user = self.request.user
         print("shorturl", id)
-        short = str(id*1000)[:5]
+        short = str(id * 1000)[:5]
         print(short)
         form.instance.shorturl = short
         return super().form_valid(form)
@@ -50,4 +63,4 @@ class BookmarkDelete(DeleteView):
 class BookmarkUpdate(UpdateView):
     model = bookmark
     fields = ['title', 'description']
-    template_name = 'review_update.html'
+    template_name = 'bookmark_update.html'

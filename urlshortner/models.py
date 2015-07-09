@@ -20,5 +20,8 @@ class bookmark(models.Model):
 
     objects = BookmarkManager()
 
+    def __str__(self):
+        return "{} - {} - {} - {} - {}".format(self.user, self.starterurl, self.shorturl, self.title, self.description)
+
     class Meta:
         ordering = ['-created']

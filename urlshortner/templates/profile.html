@@ -6,10 +6,11 @@
 <div class="container" align="center">
 <ul class="nav nav-pills" style="align:center;">
   <li role="presentation" class="active"><a href="{% url 'createbookmark' %}">Create Bookmark</a></li>
-  <li role="presentation" ><a href="{% url '' %}" >Delete Bookmark</a></li>
+  <li role="presentation" ><a href="{% url 'wtd' %}" >Delete Bookmark</a></li>
+    <li role="presentation" ><a href="{% url 'wtupdate' %}" >Update Bookmark</a></li>
     </ul></div>
 
-{% for bookmark in all_book %}
+{% for bookmark in bookmarks %}
     {{ bookmark }}<br/>
 {% endfor %}
 {% endblock %}

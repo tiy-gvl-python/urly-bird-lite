@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76150f7a-695b-42db-81f9-a33ad15da7f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/templates/bookmark_update.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/templates/createbookmark.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/templates/deletebookmark.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/makeshort.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/templates/profile.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/urlshortner/templates/registration/base.html" afterPath="$PROJECT_DIR$/urlshortner/templates/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/templates/wtd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/urlshortner/templates/wtupdate.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/urlshortner/makeshort.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/admin.py" afterPath="$PROJECT_DIR$/urlshortner/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/registration/create_user.html" afterPath="$PROJECT_DIR$/urlshortner/templates/registration/create_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/home.html" afterPath="$PROJECT_DIR$/urlshortner/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/registration/login.html" afterPath="$PROJECT_DIR$/urlshortner/templates/registration/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/base.html" afterPath="$PROJECT_DIR$/urlshortner/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/bookmark_update.html" afterPath="$PROJECT_DIR$/urlshortner/templates/bookmark_update.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/deletebookmark.html" afterPath="$PROJECT_DIR$/urlshortner/templates/deletebookmark.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/models.py" afterPath="$PROJECT_DIR$/urlshortner/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/templates/profile.html" afterPath="$PROJECT_DIR$/urlshortner/templates/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlybirdlite/urls.py" afterPath="$PROJECT_DIR$/urlybirdlite/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlshortner/views.py" afterPath="$PROJECT_DIR$/urlshortner/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -41,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/urlybirdlite/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.5761773">
+              <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding>
                 <element signature="e#621#662#0" expanded="true" />
               </folding>
@@ -53,44 +50,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bookmark_update.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urlshortner/templates/bookmark_update.html">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urlshortner/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-13.125">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deletebookmark.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="deletebookmark.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/urlshortner/templates/deletebookmark.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.875">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_user.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urlshortner/templates/registration/create_user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75">
-              <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urlshortner/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -99,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/urlshortner/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -107,34 +82,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urlshortner/templates/profile.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urlshortner/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
               <folding>
-                <element signature="e#146#167#0#HTML" expanded="true" />
+                <element signature="e#0#49#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createbookmark.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urlshortner/templates/createbookmark.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urlshortner/templates/registration/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -169,17 +124,19 @@
         <option value="$PROJECT_DIR$/urlybirdlite/settings.py" />
         <option value="$PROJECT_DIR$/urlshortner/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/urlshortner/templates/home.html" />
-        <option value="$PROJECT_DIR$/urlshortner/templates/base.html" />
         <option value="$PROJECT_DIR$/urlshortner/makeshort.py" />
         <option value="$PROJECT_DIR$/urlshortner/templates/createbookmark.html" />
         <option value="$PROJECT_DIR$/urlshortner/templates/registration/create_user.html" />
         <option value="$PROJECT_DIR$/urlshortner/admin.py" />
-        <option value="$PROJECT_DIR$/urlshortner/models.py" />
-        <option value="$PROJECT_DIR$/urlshortner/views.py" />
-        <option value="$PROJECT_DIR$/urlshortner/templates/profile.html" />
-        <option value="$PROJECT_DIR$/urlshortner/templates/deletebookmark.html" />
         <option value="$PROJECT_DIR$/urlshortner/templates/bookmark_update.html" />
         <option value="$PROJECT_DIR$/urlybirdlite/urls.py" />
+        <option value="$PROJECT_DIR$/urlshortner/templates/deletebookmark.html" />
+        <option value="$PROJECT_DIR$/urlshortner/models.py" />
+        <option value="$PROJECT_DIR$/urlshortner/templates/profile.html" />
+        <option value="$PROJECT_DIR$/urlshortner/templates/wtd.html" />
+        <option value="$PROJECT_DIR$/urlshortner/views.py" />
+        <option value="$PROJECT_DIR$/urlshortner/templates/wtupdate.html" />
+        <option value="$PROJECT_DIR$/urlshortner/templates/base.html" />
       </list>
     </option>
   </component>
@@ -605,22 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/urlshortner/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urlshortner/makeshort.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.022189349">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urlshortner/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20775624">
@@ -653,6 +594,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/urlshortner/templates/registration/create_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2670623">
+          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urlshortner/templates/bookmark_update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2670623">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/urlshortner/templates/createbookmark.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -663,36 +620,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/urlshortner/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#146#167#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/urlshortner/templates/bookmark_update.html">
+    <entry file="file://$PROJECT_DIR$/urlshortner/templates/wtd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/urlybirdlite/urls.py">
+    <entry file="file://$PROJECT_DIR$/urlshortner/templates/wtupdate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-          <folding>
-            <element signature="e#621#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urlshortner/templates/registration/create_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.089020774">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -700,7 +647,7 @@
     <entry file="file://$PROJECT_DIR$/urlshortner/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
@@ -710,7 +657,7 @@
     <entry file="file://$PROJECT_DIR$/urlshortner/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
@@ -719,9 +666,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/urlshortner/templates/deletebookmark.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urlshortner/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urlybirdlite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5761773">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding>
+            <element signature="e#621#662#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
