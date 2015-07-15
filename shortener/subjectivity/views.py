@@ -1,8 +1,5 @@
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from django.core.urlresolvers import reverse
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+
+from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.views.generic import ListView
 from django.shortcuts import render_to_response as rtr
 from django.template import RequestContext
@@ -57,3 +54,11 @@ class CreateBookMark(CreateView):  # Some more Bekk Magic
         form.instance.user = user
         form.instance.hashed = rehashid
         return super().form_valid(form)  # Causality has been denied
+
+def user_detail(request, pk):
+    try:
+        user = User.objects.get(pk=pk)
+        muser = Movie.objects.filter(rating__user=user)
+    except User.DoesNotExist:
+        return HttpResponseNotFound("NOT FOUND!")
+    context = {"user": user, "muser": muser}

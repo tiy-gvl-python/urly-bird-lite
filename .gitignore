@@ -72,3 +72,5 @@ target/
 .idea/
 requirements.txt
 requirements.txt/
+
+shortener/db.sqlite3
