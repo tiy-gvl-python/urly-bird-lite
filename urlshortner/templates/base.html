@@ -26,7 +26,6 @@
     <li role="presentation" class="active"><a href="">Home</a></li>
 <li role="presentation"><a href="{% url "regis" %}">Join Us</a></li>
 <li role="presentation"><a href="{% url "profile" %}">Profile</a></li>
-<li role="presentation"><a href="{% url "all" %}">All Urls</a></li>
 {% if user.id %}
     <li role="presentation"><a href="{% url 'logout' %}">Logout</a></li>
 {% else %}
