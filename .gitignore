@@ -69,3 +69,7 @@ docs/_build/
 target/
 
 .direnv/
+
+# PyCharm
+.idea/
+*.sqlite3
