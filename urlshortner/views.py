@@ -37,7 +37,7 @@ def home(requests):
 
 
 def profile(requests):
-    profile_book = bookmark.objects.filter(user=requests.user)
+    profile_book = bookmark.objects.filter(user=User.objects.get(id = requests.user.id))
     context = {'bookmarks': profile_book}
     return render_to_response("profile.html", context)
 

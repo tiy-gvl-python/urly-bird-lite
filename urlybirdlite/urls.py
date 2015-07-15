@@ -24,6 +24,9 @@ from urlshortner.views import home, CreateBookMark, BookmarkUpdate, BookmarkDele
     ouser, allbookmarks
 
 urlpatterns = [
+
+    url(r'^api/', include('url_api.urls')),
+
     url('^register/', CreateView.as_view(
             template_name='registration/create_user.html',
             form_class=UserCreationForm,
