@@ -73,3 +73,5 @@ target/
 # PyCharm
 .idea/
 *.sqlite3
+
+urly_hasher.py
