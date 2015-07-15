@@ -11,13 +11,14 @@ class AddUserMixin:
     def form_valid(self, form):
         obj = form.save(commit=False)
         obj.user = self.request.user
-        return super(AddUserMixin, self).form_valid(form)
+        return super().form_valid(form)
 
 
 class HashURLMixin:
     def form_valid(self, form):
         obj = form.save(commit=False)
         obj.shorted_url = hasher.encode(obj.url)
+        return super().form_valid(form)
 
 
 class CreateBookmarkView(AddUserMixin, HashURLMixin, CreateView):
