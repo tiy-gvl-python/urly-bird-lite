@@ -3,7 +3,7 @@
 {% block body %}
 
 {% for mark in object_list %}
-    {{ mark }} <br/>
+    <a href="{% url 'shorten:all_marks' %}{{ mark.pk }}" >{{ mark }}</a><br/>
 {% endfor %}
 
 

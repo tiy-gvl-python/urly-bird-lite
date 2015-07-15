@@ -2,7 +2,10 @@ from django.conf.urls import include, url
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import login, logout
 from django.views.generic import CreateView
-from .views import home, AllMarks
+from .views import home, AllMarks, SingleMark
+
+
+
 
 urlpatterns = [
     url('^$', home, name='home'),
@@ -14,6 +17,6 @@ urlpatterns = [
     url(r'^accounts/login/', login, name='Login'),
     url(r'^logout/', logout, {'next_page': '/'}, name='Logout'),
     url(r'^bookmarks/$', AllMarks.as_view(), name='all_marks'),
-
+    url(r'^bookmarks/(?P<pk>\d+)$', SingleMark.as_view(), name="delete_category"),
 
 ]

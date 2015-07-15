@@ -6,13 +6,14 @@ from django.db import models
 class Bookmark(models.Model):
     user = models.ForeignKey(User)
     code = models.CharField(max_length=50)
-    title = models.CharField(max_length=200)
-    link = models.CharField(max_length=100)
-    orig_url = models.CharField(max_length=300)
+    title = models.CharField(max_length=20, null=True)
+    link = models.CharField(max_length=250)
     date = models.DateField(auto_now_add=True)
 
+
+
     def __str__(self):
-        return "User: {}, Title {}, Date: {}".format(self.user.pk,
+        return "User: {}, Title {}, Date: {}".format(self.pk,
                                                      self.title,
                                                      self.date)
 
