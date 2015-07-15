@@ -10,7 +10,7 @@ class BookmarkManager(models.Manager):
     pass
 
 
-class bookmark(models.Model):
+class Bookmark(models.Model):
     user = models.ForeignKey(User)
     starterurl = models.CharField(max_length=250)
     shorturl = models.CharField(max_length=45)
@@ -21,14 +21,14 @@ class bookmark(models.Model):
     objects = BookmarkManager()
 
     def __str__(self):
-        return "{} - {} - {} - {} - {}".format(self.user, self.starterurl, self.shorturl, self.title, self.description)
+        return "{} - {} - {} - {} - {} - {}".format(self.user, self.starterurl, self.shorturl, self.title, self.description, self.id)
 
     class Meta:
         ordering = ['-created']
 
-class click(models.Model):
-    bookmark = models.ForeignKey(bookmark)
+class Click(models.Model):
+    bookmark = models.ForeignKey(Bookmark)
     used = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "{}".format(self.used)
+        return "{} - {}".format(self.used, self.id)

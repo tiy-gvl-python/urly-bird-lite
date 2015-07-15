@@ -39,8 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'urlshortner',
     'rest_framework',
-    'rest_framework.authtoken'
-    'url_api'
+    'rest_framework.authtoken',
+    'url_api',
 )
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

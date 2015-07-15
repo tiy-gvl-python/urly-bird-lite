@@ -6,15 +6,15 @@ import random
 # Create your views here.
 from django.views.generic import CreateView, DeleteView, UpdateView, RedirectView
 from hashids import Hashids
-from urlshortner.models import bookmark, click
+from urlshortner.models import Bookmark, Click
 from django.shortcuts import redirect
 
 
 
 def redirec(requests, shorturl):
     print(shorturl)
-    url = bookmark.objects.get(shorturl=shorturl)
-    time = click.objects.create(bookmark=url)
+    url = Bookmark.objects.get(shorturl=shorturl)
+    time = Click.objects.create(bookmark=url)
     time.save()
     url = url.starterurl
     print(url)
@@ -22,12 +22,12 @@ def redirec(requests, shorturl):
     return render_to_response("redirec.html", context)
 
 def ouser(requests, id):
-    profile_book = bookmark.objects.filter(user=User.objects.get(id=id))
+    profile_book = Bookmark.objects.filter(user=User.objects.get(id=id))
     context = {'userbookmark': profile_book}
     return render_to_response("userbookmark.html", context)
 
 def allbookmarks(requests):
-    profile_book = bookmark.objects.all()
+    profile_book = Bookmark.objects.all()
     context = {'userbookmark': profile_book}
     return render_to_response("allbookmarks.html", context)
 
@@ -37,25 +37,25 @@ def home(requests):
 
 
 def profile(requests):
-    profile_book = bookmark.objects.filter(user=User.objects.get(id = requests.user.id))
+    profile_book = Bookmark.objects.filter(user=User.objects.get(id = requests.user.id))
     context = {'bookmarks': profile_book}
     return render_to_response("profile.html", context)
 
 
 def wtd(requests):
-    delete_book = bookmark.objects.filter(user=requests.user)
+    delete_book = Bookmark.objects.filter(user=requests.user)
     context = {'bookmarks': delete_book}
     return render_to_response("wtd.html", context)
 
 
 def wtupdate(requests):
-    update_book = bookmark.objects.filter(user=requests.user)
+    update_book = Bookmark.objects.filter(user=requests.user)
     context = {'bookmarks': update_book}
     return render_to_response("wtupdate.html", context)
 
 
 class CreateBookMark(CreateView):
-    model = bookmark
+    model = Bookmark
     print("Ran past model")
     template_name = "createbookmark.html"
     print("Ran past template")
@@ -80,11 +80,11 @@ class CreateBookMark(CreateView):
 
 
 class BookmarkDelete(DeleteView):
-    model = bookmark
+    model = Bookmark
     success_url = reverse_lazy('profile')
 
 
 class BookmarkUpdate(UpdateView):
-    model = bookmark
+    model = Bookmark
     fields = ['title', 'description']
     template_name = 'bookmark_update.html'

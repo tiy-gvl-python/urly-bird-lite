@@ -35,24 +35,24 @@ After completing this assignment, you should be able to:
 Create a Django project for a bookmarking site. Users can save URLs with
 a title and an optional description.
 
-Each bookmark should have a unique code -- something like "x1yrd3a" -- for use
+Each Bookmark should have a unique code -- something like "x1yrd3a" -- for use
 in looking it up later. Create a route like "/b/{code}" that will redirect any
-user -- not just logged in users -- to the bookmark associated with that code.
+user -- not just logged in users -- to the Bookmark associated with that code.
 The route does not have to look just like the example.
 
-When a user -- anonymous or logged in -- uses a bookmark URL, record that user,
-bookmark, and timestamp. A suggested name for this model is Click, even though
+When a user -- anonymous or logged in -- uses a Bookmark URL, record that user,
+Bookmark, and timestamp. A suggested name for this model is Click, even though
 you can navigate to the URL without a click by entering it in your navigation
 bar.
 
 The site should have user registration, login, and logout.
 
 On a logged in user's index page, they should see a list of the bookmarks
-they've saved in reverse chronological order. The bookmark links
+they've saved in reverse chronological order. The Bookmark links
 should use the internal short-code route, not the original URL. From this page,
 they should be able to edit and delete bookmarks.
 
-A user's bookmark page should be public. When viewing a user's bookmark page
+A user's Bookmark page should be public. When viewing a user's Bookmark page
 when not that user, the links to edit and delete bookmarks should not show up.
 
 There should also be a page to view all bookmarks for all users in reverse
@@ -61,13 +61,13 @@ chronological order, paginated.
 These features are restated in the following list:
 
 * Users can create an account, log in, and log out.
-* Users can save a URL as a bookmark with a title and an optional description.
+* Users can save a URL as a Bookmark with a title and an optional description.
 * Users can see all their bookmarks in reverse chronological order.
 * Users can edit and delete their own bookmarks.
 * Users can see all the bookmarks for another user in reverse chronological order.
 * Users can see all the bookmarks for all users in reverse chronological order.
-* Users can access a bookmark through a URL with a short code, allowing them to share bookmarks.
-* When a user accesses a bookmark, the access is recorded with the bookmark, the user -- or anonymous user -- and the timestamp.
+* Users can access a Bookmark through a URL with a short code, allowing them to share bookmarks.
+* When a user accesses a Bookmark, the access is recorded with the Bookmark, the user -- or anonymous user -- and the timestamp.
 
 ## Additional Resources
 

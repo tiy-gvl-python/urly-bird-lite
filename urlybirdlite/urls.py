@@ -19,7 +19,7 @@ from django.views.generic import RedirectView
 from django.contrib import admin
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
-from urlshortner.models import bookmark
+from urlshortner.models import Bookmark
 from urlshortner.views import home, CreateBookMark, BookmarkUpdate, BookmarkDelete, profile, wtd, wtupdate, redirec, \
     ouser, allbookmarks
 
@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^login/$', 'django.contrib.auth.views.login',name="login"),
     url(r'^logout', 'django.contrib.auth.views.logout', name="logout"),
 
-    url('^bookmark/', CreateBookMark.as_view(
+    url('^Bookmark/', CreateBookMark.as_view(
         template_name='createbookmark.html',
         success_url='/profile/'), name="createbookmark"),
 

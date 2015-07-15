@@ -19,18 +19,18 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.AlterModelOptions(
-            name='bookmark',
+            name='Bookmark',
             options={'ordering': ['-created']},
         ),
         migrations.AlterField(
-            model_name='bookmark',
+            model_name='Bookmark',
             name='description',
             field=models.CharField(blank=True, max_length=140, default=0),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='click',
-            name='bookmark',
-            field=models.ForeignKey(to='urlshortner.bookmark'),
+            name='Bookmark',
+            field=models.ForeignKey(to='urlshortner.models.Bookmark'),
         ),
     ]
