@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from urly import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^bookmark/create/$', views.CreateBookmarkView.as_view(), name="create_bookmark")
 ]
