@@ -1,12 +1,15 @@
-
-from django.http import HttpResponseNotFound, HttpResponseRedirect
-from django.views.generic import ListView
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.core.urlresolvers import reverse
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render_to_response as rtr
 from django.template import RequestContext
 from django.views.generic.edit import CreateView
 
 
-from .models import Bookmark, User
+from .models import Bookmark, Clicker, User
 from hashids import Hashids
 import random
 
@@ -23,26 +26,36 @@ def home(request):
     return rtr("base.html", context, context_instance=RequestContext(request))
 
 
+class BookmarkList(ListView):
+    model = Bookmark
+    template_name = 'bookmark_list.html'
+
+
+class BookmarkDetail(DetailView):
+    model = Bookmark
+    template_name = 'bookmark_detail.html'
+    fields = ["title", "url", "description", "hashed", "user"]
+
+
 class UserList(ListView):
     model = User
     template_name = 'user_list.html'
 
 
-def url_changer(request, bookmark_id):
-    bookmark = Bookmark.objects.get(id=bookmark_id)
-    user = User.objects.get(bookmark__pk=bookmark_id).pk
-    hashed = hasher(user)
-    Hashed.objects.create(hashid=hashed, bookmark=bookmark)
-    all_hash = Hashed.objects.all
-    context = {"hash": hashed}
-    return rtr()
-
+def url_redirect(request, hashed):
+    bookmark = Bookmark.objects.get(hashed=hashed)
+    url = bookmark.url
+    click = Clicker.objects.create(bookmark=bookmark)
+    #context = {"url": url}
+    #return rtr('redirect.html', context, context_instance=RequestContext(request))
+    return redirect(url)
 
 class CreateBookMark(CreateView):  # Some more Bekk Magic
     model = Bookmark
     template_name = "create_bookmark.html"
     success_url = ""
     fields = ["title", "url", "description"]
+
 
 
     def form_valid(self, form):

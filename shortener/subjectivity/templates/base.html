@@ -11,6 +11,7 @@
 <h2>User: {{ user.username }}</h2>
 <a href="/">Home</a>
 <a href="{% url 'marked' %}">MARK</a>
+<a href="{% url 'mark_list' %}">LIST</a>
 <a href="/users">Users</a>
 
 {% if user.id %}

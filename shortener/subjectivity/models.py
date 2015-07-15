@@ -14,6 +14,12 @@ class Bookmark(models.Model):
     def __str__(self):
         return self.title
 
+
+class Clicker(models.Model):
+    bookmark = models.ForeignKey(Bookmark)
+    time = models.DateTimeField(auto_now_add=True)
+
+
 #  class Booker(models.Model):
 #    user = models.OneToOneField(User)
 

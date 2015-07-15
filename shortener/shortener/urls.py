@@ -33,4 +33,7 @@ urlpatterns = [
     url(r'^accounts/login/', login, name="login"),
     url(r'^logout/', logout, {'next_page': '/'}, name="logout"),
     url(r'^mark/$', views.CreateBookMark.as_view(success_url='/'), name="marked"),
+    url(r'mark_list/$', views.BookmarkList.as_view(), name='mark_list'),
+    url(r'mark_list/(?P<pk>\d+)/', views.BookmarkDetail.as_view(), name='mark_detail'),
+    url(r'^(?P<hashed>\w+)/$', views.url_redirect, name='redirect')
 ]

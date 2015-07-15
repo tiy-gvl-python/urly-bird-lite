@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    {% for mark in object_list %}
+        <p><a href="{% url 'mark_detail' mark.pk %}">{{ mark }}</a></p>
+    {% endfor%}
+
+{% endblock %}
