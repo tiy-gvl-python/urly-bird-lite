@@ -4,18 +4,16 @@ from rest_framework import serializers
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from hashids import Hashids
+import random
 from urlshortner.models import Click, Bookmark
 # Create your views here.
 
 class Bookmark_Serializer(serializers.ModelSerializer):
-    print("hey")
 
-    #def create(self, validated_data):
-     #   user =
 
     class Meta:
         model = Bookmark
-
 
 class Click_Serializer(serializers.ModelSerializer):
 
@@ -50,11 +48,18 @@ class CreateBookmark(generics.CreateAPIView):
         return super()
 
     def post(self, request, *args, **kwargs):
+        print("Made it")
         title = self.request.data['title']
         starterurl = self.request.data['starterurl']
+        print(starterurl)
+        user = self.request.user
+        self.request.data['user'] = self.request._auth.user.pk
 
-        print("Hey")
-        return self.create(request, *args, kwargs={"user": self.request.user,'title': title,  })
+        hashids = Hashids(salt="generate shoralksdjfsd{}".format(random.random()))
+        id = hashids.encode(random.randint(1, 100))
+        short = str(id * 1000)[:5]
+        self.request.data['shorturl'] = short
+        return self.create(request, *args, kwargs={"user": self.request._auth.user.pk , 'title': title, 'shorturl': short})
 
 
 
@@ -76,7 +81,7 @@ class ClickCreateBookmark(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         print("Hey")
-        return self.create(request, *args, kwargs={"bookmark": Bookmark.objects.get(id=self.request.data['bookmark'])})
+        return self.create(request, *args, kwargs={"Bookmark": Bookmark.objects.get(id=self.request.data['Bookmark'])})
 
 #Needs User Auth
 class ProfileStats(generics.ListAPIView):

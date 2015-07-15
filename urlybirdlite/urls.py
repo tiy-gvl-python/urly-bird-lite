@@ -53,7 +53,7 @@ urlpatterns = [
         template_name='bookmark_update.html',
         success_url='/profile/'), name="updatebookmark"),
 
-    url(r'^7(?P<shorturl>\w+)/$', redirec),
+    url(r'^7(?P<shorturl>\w +)/$', redirec),
     url(r'^user(?P<id>\d+)/$', ouser),
     url(r'^all/$', allbookmarks, name="all"),
 
