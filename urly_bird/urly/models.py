@@ -1,5 +1,6 @@
 
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse_lazy
 from django.db import models
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
@@ -11,8 +12,12 @@ class Bookmark(models.Model):
     title = models.CharField(max_length=25)
     description = models.CharField(max_length=140)
     url = models.URLField()
-    shortened_url = models.CharField(max_length=20)
+    hash = models.CharField(max_length=20)
     created = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def shortened_url(self):
+        return '/b/' + self.hash
 
 
 class Click(models.Model):

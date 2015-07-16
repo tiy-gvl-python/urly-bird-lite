@@ -34,9 +34,9 @@ class CreateBookmarkView(AddUserMixin, CreateView):
 
 def goto_bookmark(request, hash):
     bookmark = Bookmark.objects.filter(shortened_url=hash)
-    if bookmark:
+    if bookmark.count() == 1:
         return HttpResponseRedirect(bookmark.get().url)
-    return reverse_lazy("create_bookmark")
+    return HttpResponseRedirect(reverse_lazy("bookmark_list"))
 
 
 class BookmarkDetailView(DetailView):

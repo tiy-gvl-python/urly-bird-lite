@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block body %}
+    <table>
+    <tr>
+        <th>Title</th>
+        <th>URL</th>
+        <th>ShortenedURL</th>
+    </tr>
     {% for object in object_list %}
-        <div>
-            <p>Title: <a href="{% url "bookmark_detail" pk=object.pk %}">{{ object.title }}</a></p>
-            <p>Description: {{ object.description }}</p>
-            <p>URL: {{ object.url }}</p>
-            <p>ShortenedURL: {{ object.shortened_url }}</p>
-        </div>
+        <tr>
+            <td align="center"><a href="{% url "bookmark_detail" pk=object.pk %}">{{ object.title }}</a></td>
+            <td align="center">{{ object.url }}</td>
+            <td align="center">{{ object.shortened_url }}</td>
+        </tr>
     {% endfor %}
+    </table>
 {% endblock %}
