@@ -9,4 +9,4 @@ urlpatterns =[
         DoesEverythinMarks.as_view(),
         name='put_update_delete_api'),
 
-]
+    ]

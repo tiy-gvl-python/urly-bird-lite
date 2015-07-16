@@ -5,3 +5,5 @@ from .models import Bookmark, Click
 
 admin.site.register(Bookmark)
 admin.site.register(Click)
+
+
