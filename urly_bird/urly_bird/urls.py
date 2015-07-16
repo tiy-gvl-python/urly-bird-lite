@@ -19,6 +19,7 @@ from django.contrib.auth.views import login, logout
 from bookmarks.views import bookmark_list, user_registration, get_index, redirectOriginal
 
 urlpatterns = [
+    url(r'^api/', include('urlybird_api.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/', login, name="login"),
     url(r'^logout/', logout, {'next_page':'/'}, name="logout"),

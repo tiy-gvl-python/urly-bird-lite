@@ -3,10 +3,9 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from django.conf import settings
 from django.core.context_processors import csrf
 from django.template import RequestContext
-from bookmarks.models import Click
+from bookmarks.models import Bookmark
 
 
 def get_index(request):
@@ -16,9 +15,9 @@ def get_index(request):
 
 
 def redirectOriginal(request, short_id):
-    url = get_object_or_404(Click, pk=short_id)
+    url = get_object_or_404(Bookmark, pk=short_id)
     url.save()
-    return HttpResponseRedirect(Click.httpurl)
+    return HttpResponseRedirect(Bookmark.httpurl)
 
 
 def user_registration(request):
@@ -45,6 +44,6 @@ def user_registration(request):
 
 
 def bookmark_list(request):
-    list_of_bookmarks = Click.objects.all().order_by('timestamp')
+    list_of_bookmarks = Bookmark.objects.all().order_by('timestamp')
     context = {"bookmarks": list_of_bookmarks}
     return render_to_response("bookmark_list.html", context, context_instance=RequestContext(request))

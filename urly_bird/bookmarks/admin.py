@@ -1,9 +1,8 @@
 from django.contrib import admin
-from bookmarks.models import User, Click
+from bookmarks.models import Bookmark
 
 
 
+admin.site.register(Bookmark)
 
-admin.site.register(Click)
-admin.site.register(User)
 

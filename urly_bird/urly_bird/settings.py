@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookmarks',
+    'urlybird_api',
+    'rest_framework',
+    'rest_framework.authtoken',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,7 +55,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 SHORTEN_MODELS = {
-    "B" : 'bookmarks.Click'
+    "B" : 'bookmarks.Bookmark'
 }
 
 ROOT_URLCONF = 'urly_bird.urls'
