@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<form method="POST" action="{% url 'shorten:activate_work' %}">
+    {% csrf_token %}
+    <input  id="code" name="code"/>
+    <button type="submit">Get Token Key</button>
+</form>
+
+
+
+{% endblock %}

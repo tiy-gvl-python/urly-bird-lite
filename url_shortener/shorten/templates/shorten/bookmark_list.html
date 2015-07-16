@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% for mark in object_list %}
+    <a href="{% url 'shorten:all_marks' %}{{ mark.pk }}" >{{ mark }}</a><br/>
+{% endfor %}
+
+
+
+{% endblock %}

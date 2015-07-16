@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    Creater: {{ object.user.username }} <br/>
+    Bookmard Id: {{ object.pk }} <br/>
+    Title: {{ object.title }} <br/>
+    Time Stamp:{{ object.date }} <br/>
+    Hash: <a href="http://{{ object.link }}">{{ object.code }}</a>
+
+
+{% endblock %}
