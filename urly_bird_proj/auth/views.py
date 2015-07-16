@@ -25,4 +25,6 @@ def login_user(request):
         else:
             state = "Your username and/or password were incorrect."
 
-    return render_to_response('auth.html', {'state':state, 'username': username}) #how do I get the "c" in here without breaking things?
+    return render_to_response('auth.html', {'state':state, 'username': username})
+                            #how do I get the "c" in here without breaking things?
+                            #context_instance=RequestContext(requeset) tried this too
