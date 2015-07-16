@@ -23,5 +23,4 @@ class DeleteMark(DeleteView):
     model = Bookmark
     template_name = 'shorten/bookmark_detail.html'
 
-def hash(request):
-    pass
+
