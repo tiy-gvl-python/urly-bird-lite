@@ -23,6 +23,7 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('shorten.urls', namespace='shorten')),
+    url(r'^api/', include('api.urls', namespace='api')),
 
 
 
