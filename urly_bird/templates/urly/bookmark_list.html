@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+    {% for object in object_list %}
+        <div>
+            <p>Title: <a href="{% url "bookmark_detail" pk=object.pk %}">{{ object.title }}</a></p>
+            <p>Description: {{ object.description }}</p>
+            <p>URL: {{ object.url }}</p>
+            <p>ShortenedURL: {{ object.shortened_url }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

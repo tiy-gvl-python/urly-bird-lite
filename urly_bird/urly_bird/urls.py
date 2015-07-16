@@ -19,5 +19,8 @@ from urly import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^bookmark/create/$', views.CreateBookmarkView.as_view(), name="create_bookmark")
+    url(r'^bookmark/create/$', views.CreateBookmarkView.as_view(), name="create_bookmark"),
+    url(r'^b/(?P<hash>\w+)/$', views.goto_bookmark, name="goto_bookmark"),
+    url(r'^bookmark/(?P<pk>\d+)/$', views.BookmarkDetailView.as_view(), name="bookmark_detail"),
+    url(r'^bookmark/$', views.BookmarkListView.as_view(), name="bookmark_list"),
 ]
