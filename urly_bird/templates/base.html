@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Urly Bird</title>
+    {% endblock %}
+</head>
+<nav>
+    <div>
+        <p>
+            <a href="{% url "bookmark_list" %}">Bookmark List</a>
+        </p>
+    </div>
+</nav>
+<body>
+{% block body %}
+
+{% endblock %}
+</body>
+</html>

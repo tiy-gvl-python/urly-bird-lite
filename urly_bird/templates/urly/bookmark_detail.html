@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div>
+        <p>Title: {{ object.title }}</p>
+        <p>Description: {{ object.description }}</p>
+        <p>URL: {{ object.url }}</p>
+        <p>ShortenedURL: {{ object.shortened_url }}</p>
+    </div>
+{% endblock %}
