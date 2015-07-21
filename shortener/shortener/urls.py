@@ -23,6 +23,7 @@ from subjectivity import views
 
 urlpatterns = [
     url(r'^$', views.home, name="home"),
+    url(r'api/', include('api.urls')),
     url(r'^registration/', CreateView.as_view(
         template_name='registration/create_user.html',
         form_class=UserCreationForm,
@@ -35,5 +36,5 @@ urlpatterns = [
     url(r'^mark/$', views.CreateBookMark.as_view(success_url='/'), name="marked"),
     url(r'mark_list/$', views.BookmarkList.as_view(), name='mark_list'),
     url(r'mark_list/(?P<pk>\d+)/', views.BookmarkDetail.as_view(), name='mark_detail'),
-    url(r'^(?P<hashed>\w+)/$', views.url_redirect, name='redirect')
+    url(r'^(?P<hashed>\w+)/$', views.url_redirect, name='redirect'),
 ]

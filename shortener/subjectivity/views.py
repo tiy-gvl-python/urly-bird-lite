@@ -56,8 +56,6 @@ class CreateBookMark(CreateView):  # Some more Bekk Magic
     success_url = ""
     fields = ["title", "url", "description"]
 
-
-
     def form_valid(self, form):
         user = self.request.user
         hashids = Hashids(salt=str([random.choice('abcdefghijklmnopqrstuvwxyz') for i in range(random.randint(10,30))]))
@@ -68,10 +66,4 @@ class CreateBookMark(CreateView):  # Some more Bekk Magic
         form.instance.hashed = rehashid
         return super().form_valid(form)  # Causality has been denied
 
-def user_detail(request, pk):
-    try:
-        user = User.objects.get(pk=pk)
-        muser = Movie.objects.filter(rating__user=user)
-    except User.DoesNotExist:
-        return HttpResponseNotFound("NOT FOUND!")
-    context = {"user": user, "muser": muser}
+
