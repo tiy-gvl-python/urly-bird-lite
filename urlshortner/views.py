@@ -17,9 +17,8 @@ def redirec(requests, shorturl):
     time = Click.objects.create(bookmark=url)
     time.save()
     url = url.starterurl
-    print(url)
-    context = {"ur":url}
-    return render_to_response("redirec.html", context)
+    return redirect('http://'+url)
+
 
 def ouser(requests, id):
     profile_book = Bookmark.objects.filter(user=User.objects.get(id=id))
