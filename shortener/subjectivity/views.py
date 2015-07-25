@@ -14,13 +14,6 @@ from hashids import Hashids
 import random
 
 
-def hasher(n):
-    hashid = hashids.encode(str([random.randint(1, 10) for i in range(random.randint(3, 10))]))
-    rehash = Hashids(salt=str(hashid), min_length=7)
-    rehashid = rehash.encode(n)
-    return rehashid
-
-
 def home(request):
     context = {}
     return rtr("base.html", context, context_instance=RequestContext(request))

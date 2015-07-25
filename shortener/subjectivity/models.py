@@ -1,6 +1,8 @@
+import random
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
+from hashids import Hashids
 
 # Create your models here.
 from django.db.models.signals import post_save
@@ -30,3 +32,14 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
         Token.objects.get_or_create(user=user)
     if created:
         Token.objects.create(user=instance)
+
+
+@receiver(post_save, sender=Bookmark)
+def create_hashed(sender, instance, **kwargs):
+    if not instance.hashed:
+        hashids = Hashids(salt=str([random.choice('abcdefghijklmnopqrstuvwxyz') for i in range(random.randint(10,30))]))
+        hashid = hashids.encode(str([random.randint(1, 10) for i in range(random.randint(3, 10))]))
+        rehash = Hashids(salt=str(hashid), min_length=7)
+        instance.hashed = rehash.encode(5)
+        instance.save()
+
