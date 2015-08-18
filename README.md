@@ -1,3 +1,6 @@
+Learned about more indepth User Permissions in addition to how to create and navigate a more complex Django Applicaiton.
+
+
 # URLy Bird
 
 ## Description
