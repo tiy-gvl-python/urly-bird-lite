@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load staticfiles %}<div align="center">
+<link href="{% static 'bootstrap-3.3.5-dist/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Movie Emporium</title>
+    <style>
+        .nav-tabs > li, .nav-pills > li {
+            float:none;
+            display:inline-block;
+            *display:inline; /* ie7 fix */
+             zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+    </style>
+</head>
+
+
+<h1>Url Short</h1>
+<div class="container" align="center">
+<ul class="nav nav-pills" style="align:center;">
+    <li role="presentation" class="active"><a href="">Home</a></li>
+<li role="presentation"><a href="{% url "regis" %}">Join Us</a></li>
+<li role="presentation"><a href="{% url "profile" %}">Profile</a></li>
+{% if user.id %}
+    <li role="presentation"><a href="{% url 'logout' %}">Logout</a></li>
+{% else %}
+    <li role="presentation"><a href="{% url 'login' %}">Login</a></li>
+{% endif %}
+    </ul></div>
+{% block title %}
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+
+<!--
+ALL OF MY JAVASCRIPT IMPORT HERE
+-->
+</body>
+</div>
+</html>

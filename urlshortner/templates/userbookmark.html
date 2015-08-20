@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+<div>{{ user.username }}</div>
+
+</br>
+{% for bookmark in userbookmark %}
+    <a href="/7{{ bookmark.shorturl }}">{{ bookmark }}<br/>
+{% endfor %}
+{% endblock %}
