@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}
-    <h3>User List:</h3>
+    <div class="container">
+        <h3>User List:</h3>
+    </div>
 {% endblock %}
 
 {% block body %}
-    {% for user in object_list %}
-        <div><a href="{{ user }}">{{ user }}</a></div>
-    {% endfor %}
+        {% for user in object_list %}
+            <div><a href="{{ user }}">{{ user }}</a></div>
+        {% endfor %}
 {% endblock %}

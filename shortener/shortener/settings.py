@@ -40,7 +40,8 @@ INSTALLED_APPS = (
     'subjectivity',
     'api',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'widget_tweaks'
 )
 
 MIDDLEWARE_CLASSES = (
