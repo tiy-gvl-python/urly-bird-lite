@@ -39,13 +39,13 @@
     </div>
 </nav>
 <div class="container center-align">
-    <h1>Hash Marker</h1>
-
-    <h2>User: {{ user.username }}</h2>
-
 
     {% block title %}
-        <h3>Welcome to Hash Marker!</h3>
+        {% if user.username %}
+            <h2 style="color: grey">Welcome to Hash Marker, {{ user.username }}!</h2>
+        {% else %}
+            <h2>Welcome to Hash Marker!</h2>
+        {% endif %}
     {% endblock %}
 
     {% block body %}
