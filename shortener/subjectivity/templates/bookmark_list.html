@@ -1,9 +1,33 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
 {% block body %}
+    <div class="row">
+        {% for mark in object_list %}
+{#            <p><a href="{% url 'mark_detail' mark.pk %}">{{ mark }}</a></p>#}
+            <div class="col m8 offset-m2">
+              <div class="card blueish transparents">
+                <div class="card-content black-text">
+                  <span class="card-title">{{ mark.title }}</span>
+                  <p class="transchilds">{{ mark.description }}</p>
+                </div>
+            <div class="card-action">
+              <a class="white-text righter" href="{% url 'mark_detail' mark.pk %}">Detail Page</a>
+              <a class="modal-trigger" href="#modal{{ mark.id }}"><i class="material-icons red-text text-lighten-4">note add</i></a>
+            </div>
+          </div>
+        </div>
 
-    {% for mark in object_list %}
-        <p><a href="{% url 'mark_detail' mark.pk %}">{{ mark }}</a></p>
-    {% endfor%}
+            <div id="modal{{ mark.id }}" class="modal">
+                <div class="modal-content">
+                  <h4>Your Unique Link:</h4>
+                  <p><a href="http://localhost:8000/{{ mark.hashed }}">http://localhost:8000/{{ mark.hashed }}</a></p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+                </div>
+              </div>
+        {% endfor%}
+    </div>
 
+    <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}

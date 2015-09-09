@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
-<p>{{ object.user }}</p>
-<p>{{ object.title }}</p>
-<p>{{ object.description }}</p>
-<p>{{ object.url }}</p>
-<p><a href="/{{ object.hashed }}">{{ object.hashed }}</a></p>
-
+<div class="container">
+    <p><b>User</b>: {{ object.user }}</p>
+    <p><b>Title</b>: {{ object.title }}</p>
+    <p><b>Description</b>: {{ object.description }}</p>
+    <p><b>Original Url</b>: {{ object.url }}</p>
+    <p><b>Hashed Url</b>: <a href="/{{ object.hashed }}">{{ object.hashed }}</a></p>
+</div>
 {% endblock %}
