@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render_to_response as rtr
 from django.template import RequestContext
@@ -14,23 +15,29 @@ from hashids import Hashids
 import random
 
 
+class LoginRequiredMixin(object):
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+
+
 def home(request):
     context = {}
     return rtr("base.html", context, context_instance=RequestContext(request))
 
 
-class BookmarkList(ListView):
+class BookmarkList(LoginRequiredMixin, ListView):
     model = Bookmark
     template_name = 'bookmark_list.html'
 
 
-class BookmarkDetail(DetailView):
+class BookmarkDetail(LoginRequiredMixin, DetailView):
     model = Bookmark
     template_name = 'bookmark_detail.html'
     fields = ["title", "url", "description", "hashed", "user"]
 
 
-class UserList(ListView):
+class UserList(LoginRequiredMixin, ListView):
     model = User
     template_name = 'user_list.html'
 
@@ -38,16 +45,15 @@ class UserList(ListView):
 def url_redirect(request, hashed):
     bookmark = Bookmark.objects.get(hashed=hashed)
     url = bookmark.url
-    click = Clicker.objects.create(bookmark=bookmark)
-    #context = {"url": url}
-    #return rtr('redirect.html', context, context_instance=RequestContext(request))
+    Clicker.objects.create(bookmark=bookmark)
     return redirect(url)
 
-class CreateBookMark(CreateView):  # Some more Bekk Magic
+class CreateBookMark(LoginRequiredMixin, CreateView):  # Some more Bekk Magic
     model = Bookmark
     template_name = "create_bookmark.html"
     success_url = ""
     fields = ["title", "url", "description"]
+
 
     def form_valid(self, form):
         user = self.request.user
@@ -57,6 +63,6 @@ class CreateBookMark(CreateView):  # Some more Bekk Magic
         rehashid = rehash.encode(user.id)
         form.instance.user = user
         form.instance.hashed = rehashid
-        return super().form_valid(form)  # Causality has been denied
+        return super().form_valid(form)
 
 
