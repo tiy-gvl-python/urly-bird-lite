@@ -1,10 +1,12 @@
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView, DetailView
+from django.views import generic
+from django.views.generic import ListView, DetailView, UpdateView
 from django.shortcuts import render_to_response as rtr
 from django.template import RequestContext
 from django.views.generic.edit import CreateView
@@ -26,6 +28,22 @@ def home(request):
     return rtr("home.html", context, context_instance=RequestContext(request))
 
 
+class Registration(generic.FormView):
+    template_name = 'registration/create_user.html'
+    form_class = UserCreationForm
+    success_url = '/'
+
+    #  auto-login
+    def form_valid(self, form):
+      form.save()
+      username = self.request.POST['username']
+      password = self.request.POST['password1']
+      user = authenticate(username=username, password=password)
+      login(self.request, user)
+      Bookmark.objects.create(user=user)
+      return super().form_valid(form)
+
+
 class BookmarkList(LoginRequiredMixin, ListView):
     model = Bookmark
     template_name = 'bookmark_list.html'
@@ -43,6 +61,11 @@ class BookmarkDetail(LoginRequiredMixin, DetailView):
 class UserList(LoginRequiredMixin, ListView):
     model = User
     template_name = 'user_list.html'
+
+
+class UserDetailView(LoginRequiredMixin, DetailView):
+    model = User
+    template_name = 'user_detail.html'
 
 
 def url_redirect(request, hashed):

@@ -8,6 +8,10 @@ body {
     -o-background-size: cover;
 }
 
+hr {
+    width: 48%;
+}
+
 .colour {
     background-color: #A1B7BF;
 }
@@ -77,12 +81,12 @@ body {
     background-color: #719CA0 !important;
 }
 
-.headpad1 {
-    padding-bottom: 22px;
+.outerpad {
+    padding-bottom: 21px;
     padding-top: 10px;
 }
 
-.headpad2 {
-    padding-bottom: 17px;
-    padding-top: 10px;
+.innerpad {
+    padding-bottom: 13px;
+    padding-top: 6px;
 }

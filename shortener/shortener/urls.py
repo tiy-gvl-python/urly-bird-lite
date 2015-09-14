@@ -24,13 +24,11 @@ from subjectivity import views
 urlpatterns = [
     url(r'^$', views.home, name="home"),
     url(r'api/', include('api.urls')),
-    url(r'^registration/', CreateView.as_view(
-        template_name='registration/create_user.html',
-        form_class=UserCreationForm,
-        success_url='/'), name="regis"),  # Bekk's Code
+    url(r'^registration/$', views.Registration.as_view(), name="registration"),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^bookmarks/$', views. , name="bookmarks"),
     url(r'^users/$', views.UserList.as_view(), name="users"),
+    url(r'^user_detail/(?P<pk>\d+)/', views.UserDetailView.as_view(), name="user_detail"),
     url(r'^accounts/login/', login, name="login"),
     url(r'^logout/', logout, {'next_page': '/'}, name="logout"),
     url(r'^mark/$', views.CreateBookMark.as_view(success_url='/'), name="marked"),
