@@ -23,12 +23,15 @@ class LoginRequiredMixin(object):
 
 def home(request):
     context = {}
-    return rtr("base.html", context, context_instance=RequestContext(request))
+    return rtr("home.html", context, context_instance=RequestContext(request))
 
 
 class BookmarkList(LoginRequiredMixin, ListView):
     model = Bookmark
     template_name = 'bookmark_list.html'
+
+    def get_queryset(self):
+        return Bookmark.objects.filter(user=self.request.user)
 
 
 class BookmarkDetail(LoginRequiredMixin, DetailView):

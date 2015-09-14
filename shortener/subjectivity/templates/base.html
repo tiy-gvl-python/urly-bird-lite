@@ -38,15 +38,7 @@
         </div>
     </div>
 </nav>
-<div class="container center-align">
-
-    {% block title %}
-        {% if user.username %}
-            <h2 style="color: grey">Welcome to Hash Marker, {{ user.username }}!</h2>
-        {% else %}
-            <h2>Welcome to Hash Marker!</h2>
-        {% endif %}
-    {% endblock %}
+<div class="container center-align" style="padding-top: 100px">
 
     {% block body %}
     {% endblock %}
